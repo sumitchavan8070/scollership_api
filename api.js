@@ -1,5 +1,3 @@
-// // app.js
-// const express = require('express');
 
 const express = require("express");
 const puppeteer = require("puppeteer");
@@ -10,19 +8,19 @@ const getAccessToken = require("./scollership_api/getAccesssToken");
 
 const app = express();
 const port = 4000; // Choose your desired port
+app.use(express.json());
+
 
 
 
 app.use('/api/getScollership', getScollerShip);
 app.use('/api/getAccessToken', getAccessToken);
-// app.use('/api/getGistData', getGistData);
-// app.use('/api/checkApp', checkApp);
 
 
 
 // Route to retrieve access token
 app.get("/", async (req, res) => {
- console.log("server started"); 
+ res.send( "server is running"); 
 });
 
 
