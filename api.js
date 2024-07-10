@@ -4,7 +4,8 @@
 const express = require("express");
 const puppeteer = require("puppeteer");
 
-const getScollerShip = require("./scollership_api/get_scollership")
+const getScollerShip = require("./scollership_api/get_scollership"); 
+const getAccessToken = require("./scollership_api/getAccesssToken"); 
 
 
 const app = express();
@@ -12,50 +13,18 @@ const port = 4000; // Choose your desired port
 
 
 
-
 app.use('/api/getScollership', getScollerShip);
+app.use('/api/getAccessToken', getAccessToken);
 // app.use('/api/getGistData', getGistData);
 // app.use('/api/checkApp', checkApp);
 
 
 
-
-
-
-
 // Route to retrieve access token
 app.get("/", async (req, res) => {
-  try {
-    const accessToken = await getAccessToken();
-
-
-
-    res.status(200).json({ accessToken });
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve access token" });
-  }
+ console.log("server started"); 
 });
 
-async function getAccessToken() {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  await page.goto("https://www.buddy4study.com/");
-
-  const accessToken = await page.evaluate(() => {
-    return localStorage.getItem("accessToken");
-  });
-
-
-
-
-  await browser.close();
-
-
-  
-
-  return accessToken;
-}
 
 // Start the server
 app.listen(port, () => {
