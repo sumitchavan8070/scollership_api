@@ -32,7 +32,6 @@ app.listen(port, () => {
 });
 
 
-module.exports = getAccessToken;
 
 
 
