@@ -1,0 +1,63 @@
+var ticker_board =
+  "https://api.buddy4study.com/api/v1.0/utilms/ticker-notice-board";
+
+var slug = idfc - first - bank - mba - scholarship;
+const scollership_detail =
+  "https://api.buddy4study.com/api/v1.0/ssms/scholarship-detail/$slug";
+
+const rules = {
+  up_to_class_eight: {
+    rule: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  },
+
+  class_nine: {
+    rule: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  },
+
+  class_ten: {
+    rule: [{ rule: [10] }],
+  },
+
+  class_eleven : {
+    rule : [{rule: [12]}],
+  }, 
+  class_twelve : {
+    rule :  [{rule: [16]}],
+  }, 
+
+  graduation : {
+    rule : [{rule: [22]}]
+  }, 
+
+  post_graduation : {
+    rule : [{rule: [23]}]
+  }, 
+
+  post_graduation_diploma : {
+    rule : [{rule: [915]}]
+  } 
+
+};
+
+const live_scollerships = {
+  page: 0,
+  length: 100,
+  rules: [],
+  mode: "OPEN",
+  sortOrder: "DEADLINE",
+};
+
+const upcomming_scollerships = {
+  page: 0,
+  length: 100,
+  rules: [],
+  mode: "CLOSED",
+  sortOrder: "DEADLINE",
+};
+const all_ways_open = {
+  page: 0,
+  length: 100,
+  rules: [],
+  mode: "ALWAYS_OPEN",
+  sortOrder: "",
+};
