@@ -30,8 +30,7 @@ async function getAccessToken() {
     return accessToken;
   } catch (error) {
     console.error("Error while getting access token:", error);
-    return error;
-    
+    throw new Error("Failed to retrieve access token error  ${error.message}"); 
   } finally {
     if (browser) {
       await browser.close();
